@@ -1,0 +1,35 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: user-center
+  #DataSource Config
+  datasource:
+    #      有的mysql如5.0 下面必须改成com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #改一下端口号23306
+    url: jdbc:mysql://127.0.0.1:3306/center?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    username: root
+    #密码放在''中，不加‘’也可以
+    password: 'lxy12345'
+  #session失效时间
+  session:
+    timeout: 86400
+server:
+  port: 8080
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    #默认true，MyBatisPlus将下划线自动转为驼峰，关掉即可
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
+# springdoc-openapi项目配置
+
+
+
+
